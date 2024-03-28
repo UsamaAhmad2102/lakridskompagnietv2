@@ -1,0 +1,117 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+.navbar {
+    position:absolute;
+    top: 20px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-family: "Reddit Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure navbar appears above background image */
+
+}
+
+
+
+.logo-container .logo {
+    height: 50px;
+    margin-left: 150px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    color: grey;
+    transition: color 0.5s;
+}
+
+.cart-basket {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.cart-basket i {
+    color: black;
+}
+
+.shop-container {
+    position: relative;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    width: 100vw;
+    position: fixed;
+    top: 100px;
+    /* Adjust based on your navbar's height */
+    left: 0;
+    background-color: #808080;
+    color: black;
+    z-index: 1000;
+}
+
+/* Grid Container and Items */
+/* Grid Container and Items */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap */
+    justify-content: center;
+    /* Center items horizontally */
+    padding: 20px;
+    /* Add padding to space items from edges */
+}
+
+.grid-item {
+    width: calc(16.666% - 20px);
+    /* Adjust item width and gap */
+    margin-right: 3px;
+    /* Adjust the gap between items horizontally */
+    margin-bottom: 10px;
+    /* Adjust the gap between items vertically */
+    transition: transform 0.3s ease;
+}
+
+.grid-item:last-child {
+    margin-right: 0;
+    /* Remove right margin for the last item in each row */
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    /* Slight scale effect on hover */
+}
+
+.grid-item img {
+    width: 100%;
+    /* Ensure images cover the width of their container */
+    height: 250px;
+}
+
+
+.product-info {
+    text-align: center;
+    /* Center the text inside each grid item */
+}
