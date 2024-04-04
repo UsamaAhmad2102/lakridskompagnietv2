@@ -1,9 +1,10 @@
 body{
-    background-color: #808080;
+    background-color: #D7DCD8;
 }
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }

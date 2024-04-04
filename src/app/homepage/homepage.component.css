@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Tac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
 
 
 .background-image {
-    background-image: url('/assets/products/product5.jpg');
+    background-image: url('/assets/images/banner.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -35,8 +37,153 @@
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
-    color: black;
+    color: #432371;
     /* Text color */
     margin: 0;
     /* Remove default margin */
 }
+
+
+
+.product-container {
+    display: flex;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+}
+
+.product-container::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+.product-card {
+    flex: 0 0 auto;
+    /* Do not grow or shrink, but be flexible */
+    margin: 20px 0px;
+    /* Top and bottom margins are 20px, left and right are 10px */
+    width: 287px;
+    /* Adjust this to control the width of the cards */
+    border-radius: 0px;
+    /* Optional: if you want rounded corners */
+    overflow: hidden;
+    /* Ensures the image doesn't bleed outside the border-radius */
+    background: #D7DCD8;
+    border-left: solid 0.1px black;
+    border-right: solid 0.1px black;
+    position: relative;
+    /* Ensure the positioning context for the absolute children */
+    height: 400px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for shadow and transform */
+
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    /* Moves the card up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Larger shadow to create depth */
+}
+
+
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This will now work since .product-card has a defined height */
+    background-size: cover;
+    background-position: center;
+
+}
+
+.product-details {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+
+.product-title {
+    font-size: 1.0em;
+    margin: 10px 0;
+    font-family: "Reddit Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+
+.about-us-section {
+    background: #D7DCD8; /* A subtle nature-inspired background */
+    text-align: center; /* Centered text */
+    padding: 50px 20px; /* Ample padding for aesthetic spacing */
+    color: #333; /* A color that complements the rest of the site */
+  }
+  
+  .about-title {
+    font-family: "Anton", sans-serif; /* Keeping it consistent with your theme */
+    font-size: 2.5em; /* A size that stands out */
+    margin-bottom: 20px; /* Spacing before the paragraph */
+    color: #274c77; /* A color that fits with the nature theme */
+  }
+  
+  .about-text {
+    font-family: sans-serif; /* Simple and clean font for readability */
+    font-size: 1.1em; /* Comfortable reading size */
+    line-height: 1.6; /* Adequate line spacing for readability */
+    max-width: 800px; /* Maximum width for optimal reading experience */
+    margin: auto; /* Center the text block */
+  }
+
+  
+
+
+
+
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .feature-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px;
+    width: 300px;
+    max-width: calc(100% - 40px);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-title {
+    font-family: 'Anton', sans-serif;
+    color: #9c6644;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  .feature-text {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  

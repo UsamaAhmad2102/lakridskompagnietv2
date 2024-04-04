@@ -1,0 +1,55 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Tac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+.minimalist-footer {
+    background-color: #274c77; /* Dark background for contrast */
+    color: #f2f2f2; /* Light text color for readability */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 40px 20px;
+    font-size: 14px;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 15px;
+    color: #78909C; /* Cool gray for titles */
+  }
+  
+  .footer-section a, .footer-section p {
+    color: #f2f2f2;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #90A4AE; /* Lighter gray for hover effect */
+  }
+  
+  .footer-copy {
+    margin-top: 30px;
+    text-align: center;
+    opacity: 0.6;
+  }
+  
+  /* Icons */
+  [class^="fas fa-"], [class*=" fas fa-"] {
+    color: #78909C; /* Matching cool gray for icons */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  

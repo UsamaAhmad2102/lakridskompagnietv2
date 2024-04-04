@@ -1,1 +1,16 @@
-<p>shop works!</p>
+<div class="hero-section">
+    <div class="hero-image"></div> <!-- This div is for the blurred background image -->
+    <div class="hero-title">
+      <h1>Explore Our products</h1>
+    </div>
+  </div>
+  
+  <div class="product-grid">
+    <a *ngFor="let product of products" href="{{ product.url }}" class="product-card">
+      <img [src]="product.image" [alt]="product.name" class="product-image">
+      <h3 class="product-title">{{ product.name }}</h3>
+      <p class="product-price">{{ product.price }}</p>
+    </a>
+  </div>
+  
+  

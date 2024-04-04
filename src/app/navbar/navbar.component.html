@@ -1,9 +1,9 @@
 <nav class="navbar">
     <div class="logo-container">
-      <img src="/assets/images/logo.png" alt="Logo" class="logo">
+      <img src="/assets/images/lakridslogo.svg" alt="Logo" class="logo">
     </div>
     <div class="nav-links">
-      <a href="#">Forside</a>
+      <a routerLink="/home"routerLinkActive="active-link">Forside</a>
       <div class="shop-container" (mouseenter)="isOpen = true" (mouseleave)="isOpen = false">
         <a href="#" class="shop-link">Produkter</a>
         <div class="dropdown" [@slideDown]="isOpen ? 'open' : 'closed'">
@@ -17,9 +17,9 @@
           </div>
         </div>
       </div>
-      <a href="#">Om Os</a>
+      <a routerLink="/history"routerLinkActive="active-link">Historien</a>
       <a href="#">Kontakt</a>
-      <a href="#">Forhandlere</a>
+      <a routerLink="/products"routerLinkActive="active-link">Shop</a>
       <div class="cart-basket">
         <i class="fa-solid fa-cart-shopping"></i>
       </div>

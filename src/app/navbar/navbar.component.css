@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
 .navbar {
-    position:absolute;
+    position:fixed;
     top: 20px;
     left: 0;
     display: flex;
@@ -24,7 +24,7 @@
 
 
 .logo-container .logo {
-    height: 50px;
+    height: 100px;
     margin-left: 150px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .nav-links a {
-    color: black;
+    color: white;
     text-decoration: none;
     margin-left: 20px;
     cursor: pointer;
@@ -53,7 +53,7 @@
 }
 
 .cart-basket i {
-    color: black;
+    color: white;
 }
 
 .shop-container {
@@ -115,3 +115,8 @@
     text-align: center;
     /* Center the text inside each grid item */
 }
+
+.active-link {
+    color: #FFF;
+    background-color: #274c77; /* Adjust the colors as needed */
+  }

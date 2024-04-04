@@ -1,0 +1,85 @@
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust the height as needed */
+    color: #ffffff;
+    overflow: hidden; /* This keeps the blur effect contained within the hero-section */
+
+   
+  }
+  
+  .hero-image {
+    height: 100%;
+    background-image: url('/assets/images/history.webp'); 
+    background-size: cover;
+    background-position: center;
+    filter:  blur(5px); /* Apply grey-toning and blur to the image */
+
+  }
+  
+  .hero-title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+  }
+  
+  .hero-title h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    text-transform: uppercase; /* If you want the title uppercase as in the picture */
+    font-weight: bold;
+    margin: 0;
+    padding: 0.5rem 1rem; /* Padding around the title text */
+    font-family: "Reddit Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    z-index: 1000;
+    
+  }
+
+
+
+
+
+
+
+.company-story {
+    font-family: 'Open Sans', sans-serif; /* A clean, readable font */
+    color: #333; /* A dark grey for readability */
+    max-width: 800px; /* A comfortable reading width */
+    margin: auto; /* Center the content */
+    padding: 50px 20px; /* Padding around the content */
+  }
+  
+  .story-header {
+    text-align: center; /* Center the title */
+    padding-bottom: 30px; /* Space below the title */
+    border-bottom: 2px solid #274c77; /* A thematic underline for the title */
+  }
+  
+  .story-header h1 {
+    font-size: 2.5em; /* A prominent size for the main title */
+    color: #274c77; /* A thematic color */
+  }
+  
+  .story-content p {
+    font-size: 1.1em; /* A readable size for story text */
+    line-height: 1.8; /* Line height for readability */
+    margin-bottom: 20px; /* Space between paragraphs */
+    text-align: justify; /* Justify text for a clean, traditional look */
+  }
+  
+  /* Add media queries for responsiveness */
+  @media (max-width: 768px) {
+    .company-story {
+      padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+  
+    .story-content p {
+      text-align: left; /* Align left on smaller screens if justified text looks too stretched */
+    }
+  }
+  

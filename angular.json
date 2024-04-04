@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lakridskompagniet:build:production"
+              "buildTarget": "lakridskompagniet:build:production"
             },
             "development": {
-              "browserTarget": "lakridskompagniet:build:development"
+              "buildTarget": "lakridskompagniet:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lakridskompagniet:build"
+            "buildTarget": "lakridskompagniet:build"
           }
         },
         "test": {
