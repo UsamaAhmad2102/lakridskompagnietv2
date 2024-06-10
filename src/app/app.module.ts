@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,11 @@ import { FooterComponent } from './footer/footer.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HistoryComponent } from './history/history.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +27,21 @@ import { HistoryComponent } from './history/history.component';
     ContactComponent,
     ShopComponent,
     FooterComponent,
-    HistoryComponent
+    HistoryComponent,
+    ProductDetailComponent,
+    LoginComponent,
+    RegisterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     CarouselModule.forRoot(),
     BrowserAnimationsModule,
     GoogleMapsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

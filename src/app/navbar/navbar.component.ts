@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Make sure to import Router from @angular/router
 import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import { AuthService } from '../auth.service';
+import { CartService } from '../cart.service'; 
 
 @Component({
   selector: 'app-navbar',
@@ -24,63 +25,28 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
 })
 export class NavbarComponent {
-
+  cartItemCount: number = 0;
   isOpen = false;
   
 
   hover: boolean = false; // Used for hover state management
-  constructor(private router: Router) {} // Inject the Router service
+  constructor(
+    private router: Router,
+    public authService: AuthService,
+    private cartService: CartService
+  ) {} // Inject the Router service
 
-  products = [
-    { 
-      name: 'DIN Kjævsjijd! ', 
-      price: '70 DKK', 
-      image: '/assets/products/product1.jpg', 
-      description: 'SALMIAK LAKRIDS OVERTRUKKET MED MØRK CHOKOLADE',
-      url: '/latte' 
-    },
-    { 
-      name: 'får i sjøddad nad?  ', 
-      price: '70 DKK', 
-      image: '/assets/products/product2.jpg', 
-      description: 'SALMIAK LAKRIDS',
-      url: '/latte' 
-    },
-    { 
-      name: 'jylkatt  ', 
-      price: '70 DKK', 
-      image: '/assets/products/product3.jpg', 
-      description: 'SALMIAK LAKRIDS',
-      url: '/latte' 
-    },
-    { 
-      name: 'ded e då livæl hondans   ', 
-      price: '70 DKK', 
-      image: '/assets/products/product4.jpg', 
-      description: 'SALMIAK LAKRIDS',
-      url: '/latte' 
-    },
-    { 
-      name: 'det rabber Â   ', 
-      price: '70 DKK', 
-      image: '/assets/products/product5.jpg', 
-      description: 'SALMIAK LAKRIDS',
-      url: '/latte' 
-    },
-    { 
-      name: 'FÔrder   ', 
-      price: '70 DKK', 
-      image: '/assets/products/product6.jpg', 
-      description: 'SALMIAK LAKRIDS',
-      url: '/latte' 
-    },
-
-    
-  ];
+  ngOnInit(): void {
+    this.cartService.getCartItemCount().subscribe(count => {
+      this.cartItemCount = count;
+    });
+  }
 
   navigateToProduct(productUrl: string): void {
     this.router.navigateByUrl(productUrl);
   }
 
-
+  logout() {
+    this.authService.logout();
+  }
 }

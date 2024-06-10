@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, OnDestroy  } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
+
 export class HomepageComponent {
+  @ViewChild('carousel') carousel!: ElementRef;
+
   products = [
     { 
       name: 'Sød lakrids m/espresso', 
@@ -49,11 +52,56 @@ export class HomepageComponent {
       description: 'SALMIAK LAKRIDS',
       url: '/latte' 
     },
-
-    
   ];
+
+  
+  currentIndex = 0;
+  interval: any;
+
+  ngOnInit() {
+    this.startCarousel();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
+
+  startCarousel() {
+    this.interval = setInterval(() => {
+      this.moveCarousel();
+    }, 3000); // Juster intervallet efter behov
+  }
+
+  moveCarousel() {
+    const container = this.carousel.nativeElement;
+    const cardWidth = container.querySelector('.product-card').clientWidth;
+
+    this.currentIndex = (this.currentIndex + 1) % this.products.length;
+    const offset = -this.currentIndex * cardWidth;
+
+    container.style.transition = 'transform 1s ease';
+    container.style.transform = `translateX(${offset}px)`;
+
+    if (this.currentIndex === this.products.length - 1) {
+      setTimeout(() => {
+        container.style.transition = 'none';
+        container.style.transform = `translateX(0)`;
+
+        const lastCard = container.lastElementChild.cloneNode(true);
+        container.insertBefore(lastCard, container.firstElementChild);
+        container.removeChild(container.lastElementChild);
+
+        setTimeout(() => {
+          container.style.transition = 'transform 1s ease';
+          container.style.transform = `translateX(-${cardWidth}px)`;
+        }, 100);
+      }, 1000);
+    }
+  }
+}
+
 
 
  
 
-}
+

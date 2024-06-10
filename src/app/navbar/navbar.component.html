@@ -1,28 +1,23 @@
 <nav class="navbar">
-    <div class="logo-container">
+  <div class="logo-container">
+    <a routerLink="/home">
       <img src="/assets/images/lakridslogo.svg" alt="Logo" class="logo">
+    </a>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/products" routerLinkActive="active-link">Shop</a>
+    <a routerLink="/history" routerLinkActive="active-link">Historien</a>
+    <a routerLink="/contact" routerLinkActive="active-link">Kontakt</a>
+  </div>
+  <div class="cart-login-container">
+    <div class="cart-basket" routerLink="/cart"> <!-- Tilføj routerLink her -->
+      <i class="fa-solid fa-cart-shopping"></i><span class="cart-count">{{ cartItemCount }}</span>
     </div>
-    <div class="nav-links">
-      <a routerLink="/home"routerLinkActive="active-link">Forside</a>
-      <div class="shop-container" (mouseenter)="isOpen = true" (mouseleave)="isOpen = false">
-        <a href="#" class="shop-link">Produkter</a>
-        <div class="dropdown" [@slideDown]="isOpen ? 'open' : 'closed'">
-          <div class="grid-container">
-            <div *ngFor="let product of products" class="grid-item" (click)="navigateToProduct(product.url)">
-              <img [src]="product.image" [alt]="product.name">
-              <div class="product-info">
-                <span class="product-name">{{ product.name }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a routerLink="/history"routerLinkActive="active-link">Historien</a>
-      <a href="#">Kontakt</a>
-      <a routerLink="/products"routerLinkActive="active-link">Shop</a>
-      <div class="cart-basket">
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-  </nav>
-  
+    <a *ngIf="!authService.isAuthenticated()" routerLink="/login" class="login-icon">
+      <i class="fa-solid fa-user"></i>
+    </a>
+    <a *ngIf="authService.isAuthenticated()" (click)="logout()" class="login-icon">
+      <i class="fa-solid fa-user-check"></i>
+    </a>
+  </div>
+</nav>

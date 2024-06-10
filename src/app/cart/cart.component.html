@@ -1,0 +1,7 @@
+<h2>Din Kurv</h2>
+<div *ngFor="let item of items">
+  <h3>{{ item.Titel }}</h3>
+  <p>Pris: {{ item.Pris }} DKK</p>
+  <p>Antal på lager: {{ item.AntalPaLager }}</p>
+</div>
+<button (click)="clearCart()">Tøm Kurv</button>
