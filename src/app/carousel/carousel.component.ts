@@ -1,43 +1,43 @@
-import { Component, Input, Output, EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProduktService } from '../produkt.service'; // Adjust the path as needed
+import { Produkt } from '../produkt.model'; // Adjust the path as needed
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
-export class CarouselComponent implements OnInit, AfterViewInit, OnChanges {
-  @Input() products: any[] = [];
-  @Input() currentIndex: number = 0;
-  @Output() prevSlide = new EventEmitter<void>();
-  @Output() nextSlide = new EventEmitter<void>();
+export class CarouselComponent implements OnInit {
+  products: Produkt[] = [];
+  currentIndex: number = 0;
+  interval: any;
 
-  @ViewChild('carouselContainer', { static: false }) carouselContainer!: ElementRef;
+  constructor(private productService: ProduktService) {}
 
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    this.moveCarousel();
+  ngOnInit(): void {
+    this.productService.getProdukter().subscribe((data: Produkt[]) => {
+      this.products = data;
+      this.startAutoSlide();
+    });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['currentIndex']) {
-      this.moveCarousel();
+  ngOnDestroy(): void {
+    if (this.interval) {
+      clearInterval(this.interval);
     }
   }
 
-  moveCarousel(): void {
-    if (this.carouselContainer && this.carouselContainer.nativeElement) {
-      const container = this.carouselContainer.nativeElement;
-      const offset = -this.currentIndex * container.offsetWidth;
-      container.style.transform = `translateX(${offset}px)`;
-    }
+  startAutoSlide(): void {
+    this.interval = setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Change slide every 5 seconds
   }
 
-  onNextSlide(): void {
-    this.nextSlide.emit();
+  nextSlide(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.products.length;
   }
 
-  onPrevSlide(): void {
-    this.prevSlide.emit();
+  prevSlide(): void {
+    this.currentIndex = (this.currentIndex - 1 + this.products.length) % this.products.length;
   }
 }

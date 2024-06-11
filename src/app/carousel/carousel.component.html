@@ -1,11 +1,11 @@
-<div #carouselContainer class="carousel-container" *ngIf="products && products.length > 0">
+<div class="carousel-container" *ngIf="products && products.length > 0">
     <div class="carousel-slide" *ngFor="let product of products; let i = index" [class.active]="i === currentIndex">
-      <img [src]="product.ImageUrl" alt="{{ product.title }}" class="carousel-image" />
+      <img [src]="product.ImageUrl || 'assets/images/default-image.png'" alt="{{ product.Titel }}" class="carousel-image" />
       <div class="carousel-caption">
-        <h3>{{ product.title }}</h3>
+        <h3>{{ product.Titel }}</h3>
       </div>
     </div>
-    <button class="carousel-control prev" (click)="onPrevSlide()">&#10094;</button>
-    <button class="carousel-control next" (click)="onNextSlide()">&#10095;</button>
+    <button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
+    <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
   </div>
   

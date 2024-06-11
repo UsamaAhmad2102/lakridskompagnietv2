@@ -10,21 +10,25 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    this.authService.login(this.username, this.password).subscribe(response => {
-      if (response.token) {
-        const userRole = this.authService.getUserRole();
-        if (userRole === 'Admin') {
-          this.router.navigate(['/admin']);  // Naviger til admin-siden
-        } else {
-          this.router.navigate(['/']);  // Naviger til forsiden
+    this.authService.login(this.username, this.password).subscribe(
+      response => {
+        if (response.token) {
+          const userRole = this.authService.getUserRole();
+          if (userRole === 'Admin') {
+            this.router.navigate(['/admin']);  // Navigate to admin page
+          } else {
+            this.router.navigate(['/']);  // Navigate to home page
+          }
         }
+      },
+      error => {
+        this.errorMessage = error;
       }
-    }, error => {
-      console.error('Login failed', error);
-    });
+    );
   }
 }
