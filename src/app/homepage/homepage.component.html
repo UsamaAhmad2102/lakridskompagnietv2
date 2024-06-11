@@ -8,19 +8,29 @@
   <div class="feature-item feature-container-1">
       <h2 class="feature-title">Slow Cooked</h2>
       <div class="text-content">
-          <p>All our liquorices are slow-cooked to perfection. Each cooking process takes approximately 8 hours, reducing the original liquorice mass to about one-third. This gives the liquorice an extra soft and intense flavor.</p>
+          <p>Alle vores lakridser er langtidskogte.
+
+            En kogning tager cirka 8 timer, og koger den originale lakridsmasse ned til omtrent en tredjedel. Dette giver lakridsen en ekstra blød og intens smag.</p>
       </div>
   </div>
   <div class="feature-item feature-container-2">
       <h2 class="feature-title">A BITE OF NATURE</h2>
       <div class="text-content">
-          <p>All our products are handcrafted in Bornholm. We are proud to say that we collaborate with a long list of Bornholm-based companies. These collaborations aim to use as many local ingredients as possible. For example, the oil used in the liquorices is produced on Bornholm from Bornholm ingredients.</p>
+          <p>Alle vores lakridser er produceret med fokus på bæredygtighed og naturlige smage.
+
+            F.eks. er vores smage af bær lavet på frysetøredebær, og vores espresso smag er lavet på frisk ristede kaffebønner fra et lokalt risteri.</p>
       </div>
   </div>
   <div class="feature-item feature-container-3">
       <h2 class="feature-title">DNA OF BORNHOLM</h2>
       <div class="text-content">
-          <p>All our liquorices are produced with a focus on sustainability and natural flavors. For example, our berry flavors are made with freeze-dried berries, and our espresso flavor is made with freshly roasted coffee beans from a local roastery.</p>
+          <p>Alle vores produkter er håndlavet på Bornholm.
+
+            Vi er meget stolt af at kunne sige vi samarbejder med en lang liste Bornholmske virksomheder. Samarbejderne går ud på at bruge så mange lokale råvarer som muligt, f.eks. er den olie som bruges i lakridserne produceret på Bornholm af Bornholmske råvarer.</p>
       </div>
   </div>
 </div>
+
+<app-carousel [products]="products" [currentIndex]="currentIndex" (prevSlide)="prevSlide()" (nextSlide)="nextSlide()"></app-carousel>
+
+

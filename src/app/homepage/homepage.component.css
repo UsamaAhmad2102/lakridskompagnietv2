@@ -58,7 +58,7 @@
 
 .text-content {
   color: white;
-  font-family: 'Arial', sans-serif;
+  font-family: "Times New Roman", Sans-serif;
   line-height: 1.6;
   position: absolute;
   bottom: 10px; /* Initial position at the bottom */
@@ -84,7 +84,7 @@
 }
 
 .feature-container-2 {
-  background-image: url('/assets/images/Bornholm.png');
+  background-image: url('/assets/images/abiteofnature.png');
   background-size: cover;
   background-position: center;
 }

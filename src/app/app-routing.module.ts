@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component'; 
 import { AdminComponent } from './admin/admin.component';
 import { CartComponent } from './cart/cart.component'; // Import CartComponent
+import { CarouselComponent } from './carousel/carousel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'cart', component: CartComponent } // Add CartComponent route
+  { path: 'cart', component: CartComponent }, // Add CartComponent route
+  {path: 'carousel', component: CarouselComponent}
 ];
 
 @NgModule({

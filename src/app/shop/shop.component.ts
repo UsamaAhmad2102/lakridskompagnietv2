@@ -36,6 +36,6 @@ export class ShopComponent implements OnInit {
 
   addToCart(produkt: Produkt) {
     this.cartService.addToCart(produkt);
-    window.alert('Dit produkt er blevet tilføjet til kurven!');
+   
   }
 }

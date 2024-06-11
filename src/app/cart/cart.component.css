@@ -1,0 +1,132 @@
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .cart-items, .order-summary {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .cart-items {
+    flex: 2;
+    margin-right: 20px;
+  }
+  
+  .order-summary {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+  }
+  
+  .item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-control button {
+    background: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0000;
+    margin-left: 10px;
+  }
+  
+  .order-summary h2 {
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  
+  .promo-code {
+    margin-bottom: 20px;
+  }
+  
+  .promo-code input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .terms {
+    margin-bottom: 20px;
+  }
+  
+  .terms label {
+    margin-left: 10px;
+  }
+  
+  .checkout-button {
+    width: 100%;
+    padding: 15px;
+    background: #8d6e63;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .checkout-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .payment-methods {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .payment-methods img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .cart-id {
+    margin-top: 20px;
+    text-align: center;
+    color: #888;
+  }
+  

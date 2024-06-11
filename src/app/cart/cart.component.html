@@ -1,7 +1,43 @@
-<h2>Din Kurv</h2>
-<div *ngFor="let item of items">
-  <h3>{{ item.Titel }}</h3>
-  <p>Pris: {{ item.Pris }} DKK</p>
-  <p>Antal på lager: {{ item.AntalPaLager }}</p>
-</div>
-<button (click)="clearCart()">Tøm Kurv</button>
+<div class="cart-container" *ngIf="cartItems && cartItems.length > 0">
+    <div class="cart-items">
+      <h2>Din kurv</h2>
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.ImageUrl || 'assets/images/default-image.png'" alt="{{ item.Titel }}" class="item-image" onError="this.src='assets/images/default-image.png'" />
+        <div class="item-details">
+          <h3>{{ item.Titel }}</h3>
+          <p>{{ item.Beskrivelse }}</p>
+          <p>{{ item.Pris }} kr.</p>
+          <div class="quantity-control">
+            <button (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.AntalPaLager }}</span>
+            <button (click)="increaseQuantity(item)">+</button>
+            <button (click)="removeItem(item)" class="remove-button">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-summary">
+      <h2>Ordreoversigt</h2>
+      <div class="summary-item">
+        <span>Subtotal</span>
+        <span>{{ subtotal() }} kr.</span>
+      </div>
+      <div class="summary-item">
+        <span>Levering</span>
+        <span>Beregnet i næste trin</span>
+      </div>
+      <div class="summary-total">
+        <span>I alt</span>
+        <span>{{ subtotal() }} kr.</span>
+      </div>
+      <div class="terms">
+        <input type="checkbox" id="terms" [(ngModel)]="acceptTerms" />
+        <label for="terms">Jeg accepterer <a href="#">vilkår og service</a></label>
+      </div>
+      <button class="checkout-button" [disabled]="!acceptTerms" (click)="checkout()">GÅ TIL KASSEN</button>
+      <div class="cart-id">
+        <p>Dit kurv-id: {{ cartId }}</p>
+      </div>
+    </div>
+  </div>
+  

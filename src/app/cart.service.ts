@@ -1,30 +1,41 @@
 import { Injectable } from '@angular/core';
-import { Produkt } from './produkt.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators'; // Import the map operator
+import { Produkt } from './produkt.model'; // Adjust the path as needed
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private items: Produkt[] = [];
-  private cartItemCount = new BehaviorSubject<number>(0);
+  private cartItemsSubject = new BehaviorSubject<Produkt[]>([]);
+  cartItems$ = this.cartItemsSubject.asObservable();
 
-  getItems() {
-    return this.items;
+  addToCart(product: Produkt): void {
+    const currentItems = this.cartItemsSubject.getValue();
+    const itemIndex = currentItems.findIndex(item => item.ProduktID === product.ProduktID);
+
+    if (itemIndex > -1) {
+      currentItems[itemIndex].AntalPaLager += 1;
+    } else {
+      currentItems.push({ ...product, AntalPaLager: 1 });
+    }
+
+    this.cartItemsSubject.next(currentItems);
   }
 
-  addToCart(produkt: Produkt) {
-    this.items.push(produkt);
-    this.cartItemCount.next(this.items.length);
+  removeFromCart(product: Produkt): void {
+    const currentItems = this.cartItemsSubject.getValue();
+    const updatedItems = currentItems.filter(item => item.ProduktID !== product.ProduktID);
+    this.cartItemsSubject.next(updatedItems);
   }
 
-  getCartItemCount() {
-    return this.cartItemCount.asObservable();
+  getCartItems(): Produkt[] {
+    return this.cartItemsSubject.getValue();
   }
 
-  clearCart() {
-    this.items = [];
-    this.cartItemCount.next(this.items.length);
-    return this.items;
+  getCartItemCount(): Observable<number> {
+    return this.cartItems$.pipe(
+      map((items: Produkt[]) => items.reduce((count: number, item: Produkt) => count + item.AntalPaLager, 0))
+    );
   }
 }

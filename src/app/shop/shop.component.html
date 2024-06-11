@@ -1,6 +1,6 @@
 <div class="product-grid">
   <div class="product-card" *ngFor="let produkt of produkter" (click)="navigateToProductDetail(produkt.ProduktID)">
-    <!-- <img [src]="produkt.ImageUrl" alt="{{ produkt.Titel }}" class="product-image"> -->
+    <img [src]="produkt.ImageUrl" class="product-image"> 
     <div class="product-info">
       <h2>{{ produkt.Titel }}</h2>
       <p>{{ produkt.Pris }} kr.</p>

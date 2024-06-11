@@ -1,7 +1,16 @@
-<div *ngIf="produkt">
-  <h2>{{ produkt.Titel }}</h2>
-  <p>{{ produkt.Beskrivelse }}</p>
-  <p>Pris: {{ produkt.Pris }} DKK</p>
-  <p>Antal på lager: {{ produkt.AntalPaLager }}</p>
-  <button (click)="addToCart(produkt)">Tilføj til kurv</button>
+<div *ngIf="produkt" class="product-detail">
+  <div class="product-image">
+    <img [src]="produkt.ImageUrl" alt="{{ produkt.Titel }}">
+  </div>
+  <div class="product-info">
+    <h1>{{ produkt.Titel }}</h1>
+    <p>{{ produkt.Beskrivelse }}</p>
+    <div class="product-price">
+      <span>{{ produkt.Pris }} DKK</span>
+    </div>
+    <div class="product-stock">
+      <p>Antal på lager: {{ produkt.AntalPaLager }}</p>
+    </div>
+    <button class="add-to-cart" (click)="addToCart(produkt)">Tilføj til kurv</button>
+  </div>
 </div>

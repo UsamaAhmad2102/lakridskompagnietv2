@@ -1,70 +1,61 @@
-/* shop.component.css */
-.product-card {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .product-image {
-    width: 100px; /* Juster størrelsen efter behov */
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  .product-title {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .product-price {
-    font-size: 16px;
-  }
-  
-  /* product-detail.component.css */
-  .product-details-container {
-    display: flex;
-  }
-  
-  .product-image-container {
-    flex: 1;
-  }
-  
-  .product-info-container {
-    flex: 2;
-    padding: 0 20px; /* Tilpas polstring efter behov */
-  }
-  
-  .product-image {
-    width: 100%; /* Sørg for, at billedet fylder sin container */
-  }
-  
-  .product-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .product-description {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .product-price {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .add-to-cart-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff; /* Tilpas farve efter behov */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add-to-cart-button:hover {
-    background-color: blue; /* Farve ved hover */
-  }
-  
+.product-detail {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.product-image {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.product-info {
+  flex: 2;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.product-stock {
+  margin-bottom: 20px;
+}
+
+.add-to-cart {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #8d6e63;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.add-to-cart:hover {
+  background: #6d4c41;
+}
