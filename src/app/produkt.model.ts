@@ -4,6 +4,7 @@ export interface Produkt {
     Beskrivelse: string;
     Pris: number;
     AntalPaLager: number;
+    Indhold: String;
     ImageUrl: string; 
   }
   

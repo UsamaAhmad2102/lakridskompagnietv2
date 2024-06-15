@@ -19,6 +19,10 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ProductManagementComponent } from './product-management/product-management.component';
+import { ReadProductComponent } from './read-product/read-product.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,12 @@ import { CarouselComponent } from './carousel/carousel.component';
     LoginComponent,
     RegisterComponent,
     CartComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProductManagementComponent,
+    ReadProductComponent,
+    CreateProductComponent,
+    DeleteProductComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -43,6 +52,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
 
   ],
   providers: [],

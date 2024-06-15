@@ -1,0 +1,26 @@
+<div class="view-product-container">
+    <h2>View Product</h2>
+    <div class="input-container">
+      <input type="number" [(ngModel)]="productId" placeholder="Enter Product ID">
+      <button class="get-button" (click)="getProduct()">Get Product</button>
+    </div>
+    <div *ngIf="message" class="message">
+      {{ message }}
+    </div>
+    <div *ngIf="product" class="product-detail">
+      <div class="product-image">
+        <img [src]="product.ImageUrl" alt="{{ product.Titel }}">
+      </div>
+      <div class="product-info">
+        <h1>{{ product.Titel }}</h1>
+        <p>{{ product.Beskrivelse }}</p>
+        <div class="product-price">
+          <span>{{ product.Pris | currency }}</span>
+        </div>
+        <div class="product-stock">
+          <p>Antal på lager: {{ product.Antalpalager }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

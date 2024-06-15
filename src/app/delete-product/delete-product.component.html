@@ -1,0 +1,9 @@
+<div class="delete-product-container">
+    <h2>Delete Product</h2>
+    <form (ngSubmit)="deleteProduct()">
+        <div class="form-group"> <label for="productId">Product ID:</label> <input type="text" id="productId"
+                [(ngModel)]="productId" name="productId" required> </div> <button type="submit"
+            class="delete-button">Delete</button>
+    </form>
+    <div *ngIf="message" class="message"> {{ message }} </div>
+</div>
