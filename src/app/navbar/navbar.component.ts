@@ -27,6 +27,7 @@ import { CartService } from '../cart.service';
 export class NavbarComponent {
   cartItemCount: number = 0;
   isOpen = false;
+  menuOpen = false;
   
 
   hover: boolean = false; // Used for hover state management
@@ -44,6 +45,10 @@ export class NavbarComponent {
 
   navigateToProduct(productUrl: string): void {
     this.router.navigateByUrl(productUrl);
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 
   logout() {
