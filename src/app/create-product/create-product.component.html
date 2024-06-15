@@ -1,0 +1,34 @@
+<div class="create-product-container">
+    <h2>Create Product</h2>
+    <form (ngSubmit)="createProduct()">
+      <div class="form-group">
+        <label for="Titel">Title</label>
+        <input type="text" id="Titel" [(ngModel)]="product.Titel" name="Titel" required>
+      </div>
+      <div class="form-group">
+        <label for="Beskrivelse">Description</label>
+        <input type="text" id="Beskrivelse" [(ngModel)]="product.Beskrivelse" name="Beskrivelse">
+      </div>
+      <div class="form-group">
+        <label for="Pris">Price</label>
+        <input type="number" id="Pris" [(ngModel)]="product.Pris" name="Pris" required>
+      </div>
+      <div class="form-group">
+        <label for="AntalPaLager">Stock</label>
+        <input type="number" id="AntalPaLager" [(ngModel)]="product.AntalPaLager" name="AntalPaLager">
+      </div>
+      <div class="form-group">
+        <label for="Indhold">Content</label>
+        <input type="text" id="Indhold" [(ngModel)]="product.Indhold" name="Indhold">
+      </div>
+      <div class="form-group">
+        <label for="ImageUrl">Image URL</label>
+        <input type="text" id="ImageUrl" [(ngModel)]="product.ImageUrl" name="ImageUrl">
+      </div>
+      <button type="submit" class="submit-button">Create Product</button>
+    </form>
+    <div *ngIf="message" class="message">
+      {{ message }}
+    </div>
+  </div>
+  

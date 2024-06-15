@@ -9,6 +9,10 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { CartComponent } from './cart/cart.component'; // Import CartComponent
 import { CarouselComponent } from './carousel/carousel.component';
+import { ProductManagementComponent } from './product-management/product-management.component';
+import { ReadProductComponent } from './read-product/read-product.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,7 +24,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'cart', component: CartComponent }, // Add CartComponent route
-  {path: 'carousel', component: CarouselComponent}
+  {path: 'carousel', component: CarouselComponent},
+  { path: 'manage', component: ProductManagementComponent },
+  { path: 'read-product', component: ReadProductComponent },
+  { path: 'create-product', component: CreateProductComponent },
+  { path: 'delete-product', component: DeleteProductComponent },
+
 ];
 
 @NgModule({

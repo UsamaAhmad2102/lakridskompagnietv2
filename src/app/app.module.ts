@@ -19,6 +19,10 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ProductManagementComponent } from './product-management/product-management.component';
+import { ReadProductComponent } from './read-product/read-product.component';
+import { CreateProductComponent } from './create-product/create-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 // Import PaymentService if not using providedIn: 'root'
 import { PaymentService } from './PaymentService';
@@ -36,7 +40,12 @@ import { PaymentService } from './PaymentService';
     LoginComponent,
     RegisterComponent,
     CartComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProductManagementComponent,
+    ReadProductComponent,
+    CreateProductComponent,
+    DeleteProductComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -46,6 +55,8 @@ import { PaymentService } from './PaymentService';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
+
   ],
   providers: [
     PaymentService  // If using providedIn: 'root' in the service, this line can be omitted.

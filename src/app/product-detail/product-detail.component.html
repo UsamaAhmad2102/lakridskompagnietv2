@@ -1,15 +1,18 @@
-<div *ngIf="produkt" class="product-detail">
+<div *ngIf="produkt" class="product-detail-container">
   <div class="product-image">
     <img [src]="produkt.ImageUrl" alt="{{ produkt.Titel }}">
   </div>
   <div class="product-info">
     <h1>{{ produkt.Titel }}</h1>
-    <p>{{ produkt.Beskrivelse }}</p>
+    <p class="description">{{ produkt.Beskrivelse }}</p>
     <div class="product-price">
-      <span>{{ produkt.Pris }} DKK</span>
+      <span>{{ produkt.Pris | currency:'DKK':'symbol' }}</span>
     </div>
     <div class="product-stock">
       <p>Antal på lager: {{ produkt.AntalPaLager }}</p>
+    </div>
+    <div class="product-content">
+      <p><strong>Indhold:</strong> {{ produkt.Indhold }}</p>
     </div>
     <button class="add-to-cart" (click)="addToCart(produkt)">Tilføj til kurv</button>
   </div>

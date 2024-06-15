@@ -1,61 +1,106 @@
-.product-detail {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.product-detail-container {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  background: #fff;
+  margin: 40px auto;
 }
 
 .product-image {
   flex: 1;
-  padding-right: 20px;
+  max-width: 500px;
+  margin-right: 40px;
 }
 
 .product-image img {
-  max-width: 100%;
-  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-info {
   flex: 2;
-  padding-left: 20px;
   display: flex;
   flex-direction: column;
 }
 
 .product-info h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.product-info p {
-  font-size: 16px;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #333;
 }
 
-.product-price {
-  font-size: 20px;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.product-stock {
+.product-info .description {
+  font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #555;
+}
+
+.product-price span {
+  font-size: 1.5rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.product-stock p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #888;
+}
+
+.product-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #555;
 }
 
 .add-to-cart {
   padding: 10px 20px;
-  font-size: 16px;
-  background: #8d6e63;
-  color: #fff;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  color: white;
+  background-color: #8b5e3c;
   cursor: pointer;
-  width: 150px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
 }
 
 .add-to-cart:hover {
-  background: #6d4c41;
+  background-color: #6f4a2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .product-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-info {
+    align-items: center;
+  }
+
+  .add-to-cart {
+    align-self: center;
+  }
 }

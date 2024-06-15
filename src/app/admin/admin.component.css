@@ -1,0 +1,53 @@
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #4a4a4a;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .big-button {
+    width: 200px;
+    height: 60px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .big-button.products {
+    background-color: #ff6f61;
+  }
+  
+  .big-button.orders {
+    background-color: #4caf50;
+  }
+  
+  .big-button.customers {
+    background-color: #2196f3;
+  }
+  
+  .big-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  

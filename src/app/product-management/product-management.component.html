@@ -1,0 +1,17 @@
+<div class="product-management-container">
+    <h2>Product Management</h2>
+    <p class="description">
+      Welcome to the Product Management section. Here you can create, delete, update, and view products. 
+      Use the buttons below to navigate to the respective actions.
+    </p>
+    <div class="button-container">
+      <button class="action-button create" (click)="navigateToCreateProduct()">Create Product</button>
+      <button class="action-button delete" (click)="deleteProduct()">Delete Product</button>
+      <button class="action-button update" >Update Product</button>
+      <button class="action-button view" (click)="navigateToReadProduct()">View Product</button>
+    </div>
+    <div *ngIf="message" class="message">
+      {{ message }}
+    </div>
+  </div>
+  
