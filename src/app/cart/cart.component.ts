@@ -1,5 +1,7 @@
+// cart.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { PaymentService } from '../PaymentService';
 import { Produkt } from '../produkt.model'; 
 
 @Component({
@@ -9,10 +11,10 @@ import { Produkt } from '../produkt.model';
 })
 export class CartComponent implements OnInit {
   cartItems: Produkt[] = [];
-  acceptTerms: boolean = false; // Add this property
-  cartId: string = '06b7911f-17b4-43cb-a227-e926f2e1da49'; // Add this property
+  acceptTerms: boolean = false;
+  cartId: string = '06b7911f-17b4-43cb-a227-e926f2e1da49';
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private paymentService: PaymentService) {}
 
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe(items => {
@@ -40,8 +42,11 @@ export class CartComponent implements OnInit {
     return this.cartItems.reduce((sum, item) => sum + (item.Pris * item.AntalPaLager), 0);
   }
 
-  checkout(): void {
-    console.log('Proceed to checkout');
-    // Add your checkout logic here
+  async checkout(): Promise<void> {
+    try {
+      await this.paymentService.createCheckoutSession(this.cartItems);
+    } catch (error) {
+      console.error('Error during checkout:', error);
+    }
   }
 }

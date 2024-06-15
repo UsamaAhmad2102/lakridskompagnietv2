@@ -20,6 +20,9 @@ import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { CarouselComponent } from './carousel/carousel.component';
 
+// Import PaymentService if not using providedIn: 'root'
+import { PaymentService } from './PaymentService';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +46,10 @@ import { CarouselComponent } from './carousel/carousel.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
   ],
-  providers: [],
+  providers: [
+    PaymentService  // If using providedIn: 'root' in the service, this line can be omitted.
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
