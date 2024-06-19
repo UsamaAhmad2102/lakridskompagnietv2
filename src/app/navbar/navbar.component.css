@@ -21,16 +21,17 @@
 
 .nav-links {
   display: flex;
-  gap: 40px; /* Increased gap between links */
+  gap: 40px;
   flex: 1;
-  justify-content: center; /* Centered links */
+  justify-content: center;
+  order: 2;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
   font-family: Arial, sans-serif;
-  font-size: 18px; /* Increased font size */
+  font-size: 18px;
 }
 
 .nav-links a:hover {
@@ -40,9 +41,9 @@
 .cart-login-container {
   display: flex;
   align-items: center;
-  gap: 30px; /* Increased gap between cart and login */
-  margin-left: auto; /* Align to the right side */
-  
+  gap: 30px;
+  margin-left: auto;
+  order: 3;
 }
 
 .cart-basket {
@@ -67,4 +68,52 @@
 
 .login-icon i:hover {
   color: #ccc;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 60px; /* Adjust to ensure it appears below the navbar */
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #444;
+}
+
+.show {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }

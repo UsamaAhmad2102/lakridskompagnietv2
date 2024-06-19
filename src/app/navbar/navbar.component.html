@@ -4,13 +4,14 @@
       <img src="/assets/images/lakridslogo.svg" alt="Logo" class="logo">
     </a>
   </div>
+  <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button> <!-- Hamburger menu -->
   <div class="nav-links">
     <a routerLink="/products" routerLinkActive="active-link">Shop</a>
     <a routerLink="/history" routerLinkActive="active-link">Historien</a>
     <a routerLink="/contact" routerLinkActive="active-link">Kontakt</a>
   </div>
   <div class="cart-login-container">
-    <div class="cart-basket" routerLink="/cart"> <!-- Tilføj routerLink her -->
+    <div class="cart-basket" routerLink="/cart">
       <i class="fa-solid fa-cart-shopping"></i><span class="cart-count">{{ cartItemCount }}</span>
     </div>
     <a *ngIf="!authService.isAuthenticated()" routerLink="/login" class="login-icon">
@@ -21,3 +22,8 @@
     </a>
   </div>
 </nav>
+<div class="dropdown-menu" [class.show]="menuOpen">
+  <a routerLink="/products" routerLinkActive="active-link" (click)="toggleMenu()">Shop</a>
+  <a routerLink="/history" routerLinkActive="active-link" (click)="toggleMenu()">Historien</a>
+  <a routerLink="/contact" routerLinkActive="active-link" (click)="toggleMenu()">Kontakt</a>
+</div>

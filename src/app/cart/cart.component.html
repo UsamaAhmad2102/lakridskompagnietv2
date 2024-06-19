@@ -5,7 +5,6 @@
         <img [src]="item.ImageUrl || 'assets/images/default-image.png'" alt="{{ item.Titel }}" class="item-image" onError="this.src='assets/images/default-image.png'" />
         <div class="item-details">
           <h3>{{ item.Titel }}</h3>
-          <p>{{ item.Beskrivelse }}</p>
           <p>{{ item.Pris }} kr.</p>
           <div class="quantity-control">
             <button (click)="decreaseQuantity(item)">-</button>

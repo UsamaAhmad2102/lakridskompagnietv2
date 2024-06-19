@@ -24,6 +24,9 @@ import { ReadProductComponent } from './read-product/read-product.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 
+// Import PaymentService if not using providedIn: 'root'
+import { PaymentService } from './PaymentService';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +58,9 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
     
 
   ],
-  providers: [],
+  providers: [
+    PaymentService  // If using providedIn: 'root' in the service, this line can be omitted.
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
